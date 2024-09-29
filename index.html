@@ -21,20 +21,20 @@
             position: absolute;
             bottom: 200px;
             left: 0;
-            width: 150px;
+            width: 100px; /* Reduced the size for a better fit */
             transition: transform 0.5s;
         }
         .stairs {
             position: absolute;
-            bottom: 10px;
-            right: 0;
+            bottom: 0;
+            left: 25%; /* Moved stairs more to the left */
             display: flex;
             flex-direction: column-reverse;
-            width: 300px;
+            width: 400px; /* Increased width for bigger stairs */
         }
         .step {
             background-color: #8b4513;
-            height: 30px;
+            height: 40px; /* Increased height for bigger steps */
             width: 100%;
             border-top: 3px solid #5e3311;
             box-shadow: 0 3px 5px rgba(0,0,0,0.3);
@@ -85,14 +85,29 @@
                 bottom: 200px;
                 transform: rotate(0deg);
             }
-            50% {
-                left: 70%;
+            20% {
+                left: 62%;
                 bottom: 150px;
+                transform: rotate(30deg);
+            }
+            40% {
+                left: 65%;
+                bottom: 120px;
                 transform: rotate(90deg);
+            }
+            60% {
+                left: 70%;
+                bottom: 80px;
+                transform: rotate(180deg);
+            }
+            80% {
+                left: 75%;
+                bottom: 40px;
+                transform: rotate(270deg);
             }
             100% {
                 left: 80%;
-                bottom: 10px;
+                bottom: 0;
                 transform: rotate(360deg);
             }
         }
@@ -124,7 +139,7 @@
 
             // After walking, trip and fall animation
             setTimeout(() => {
-                cat.style.animation = 'tripAndFall 1.5s forwards';
+                cat.style.animation = 'tripAndFall 2.5s forwards'; // Slightly extended to make the fall more visible
             }, 2000); // Starts after 2 seconds when the cat "reaches" the tripping point
         }
     </script>
